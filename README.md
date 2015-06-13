@@ -5,17 +5,21 @@ Both real and complex SH are supported. The orthonormalised versions of SH
 are used. More specifically, the complex SHs are given by:
 
   Y_{nm}(\theta,\phi) =
+  
   (-1)^m \sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}} P_l^m(\cos\theta) e^{im\phi}
 
 and the real ones as in:
 
   R_{nm}(\theta,\phi) = 
+  
   \sqrt{\frac{2n+1}{4\pi}\frac{(n-|m|)!}{(n+|m|)!}} P_l^{|m|}(\cos\theta) N_m(\phi)
   
 where
 
   N_m(\phi) = \sqrt{2} cos(m\phi},    m>0
+  
   N_m(\phi) = 1,    m>0
+  
   N_m(\phi) = \sqrt{2} sin(|m|\phi},  m<0
 
 The associated Legendre functions P_l^m DO NOT include the Condon-Shortley phase factor (-1)^m in their definition
