@@ -18,9 +18,9 @@ Y_{nm}(\theta,\phi) =
 and the real ones as in:
 R_{nm}(\theta,\phi) = 
 \sqrt{\frac{2n+1}{4\pi}\frac{(n-|m|)!}{(n+|m|)!}} P_l^{|m|}(\cos\theta)
-\sqrt{2} cos(m\phi},    m>0
-1                  ,    m=0
-\sqrt{2} sin(m\phi),    m<0
+\sqrt{2} cos(m\phi},        m>0
+1                  ,        m=0
+\sqrt{2} sin(|m|\phi),      m<0
 
 Note that the Condon-Shortley phase of (-1)^m is not used in the code for
 the complex SH since it is included in the definition of the associated 
@@ -67,6 +67,25 @@ introduced in
 and can be also found in
 
     http://mathworld.wolfram.com/Wigner3j-Symbol.html, Eq.17.
+
+Finally, in the library functions are included that compute coefficients of 
+rotated functions, either for the simple case of an axisymmetric kernel 
+rotated to some direction (\theta_0, phi_0), or the more complex case of 
+arbitrary functions were wull rotation matrices are constructed from Euler 
+angles. The algorithm used is according to the recursive method of Ivanic and 
+Ruedenberg, as can be found in
+
+       Ivanic, J., Ruedenberg, K. (1996). Rotation Matrices for Real 
+       Spherical Harmonics. Direct Determination by Recursion. The Journal 
+       of Physical Chemistry, 100(15), 6342?6347.
+
+and with the corrections of
+
+       Ivanic, J., Ruedenberg, K. (1998). Rotation Matrices for Real 
+       Spherical Harmonics. Direct Determination by Recursion Page: Additions 
+       and Corrections. Journal of Physical Chemistry A, 102(45), 9099?9100.
+
+Rotation matrices for both real and complex SH can be obtained.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

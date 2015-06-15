@@ -67,6 +67,25 @@ which can be also found in
 
     http://mathworld.wolfram.com/Wigner3j-Symbol.html, Eq.17.
 
+Finally, in the library functions are included that compute coefficients of 
+rotated functions, either for the simple case of an axisymmetric kernel 
+rotated to some direction (\theta_0, phi_0), or the more complex case of 
+arbitrary functions were wull rotation matrices are constructed from Euler 
+angles. The algorithm used is according to the recursive method of Ivanic and 
+Ruedenberg, as can be found in
+
+       Ivanic, J., Ruedenberg, K. (1996). Rotation Matrices for Real 
+       Spherical Harmonics. Direct Determination by Recursion. The Journal 
+       of Physical Chemistry, 100(15), 6342?6347.
+
+and with the corrections of
+
+       Ivanic, J., Ruedenberg, K. (1998). Rotation Matrices for Real 
+       Spherical Harmonics. Direct Determination by Recursion Page: Additions 
+       and Corrections. Journal of Physical Chemistry A, 102(45), 9099?9100.
+
+Rotation matrices for both real and complex SH can be obtained.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 For a list of functions and scripts check the README.txt file.

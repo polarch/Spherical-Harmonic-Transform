@@ -68,9 +68,9 @@ end
 
 % plot 3d axes
 maxF = max(max(abs(Fgrid)));
-line([0 1.5*maxF],[0 0],[0 0],'color',[1 0 0])
-line([0 0],[0 1.5*maxF],[0 0],'color',[0 1 0])
-line([0 0],[0 0],[0 1.5*maxF],'color',[0 0 1])
+line([0 1.1*maxF],[0 0],[0 0],'color',[1 0 0])
+line([0 0],[0 1.1*maxF],[0 0],'color',[0 1 0])
+line([0 0],[0 0],[0 1.1*maxF],'color',[0 0 1])
 
 % plot function
 hold on
@@ -78,12 +78,12 @@ if isequal(realComplex, 'real')
     Hp = surf(Dp_x, Dp_y, Dp_z);
     Hn = surf(Dn_x, Dn_y, Dn_z);
     set(Hp, 'FaceColor', 'b')
-    set(Hp, 'EdgeAlpha', 1)
+    set(Hp, 'EdgeAlpha', 0.2)
     set(Hn, 'FaceColor', 'r')
-    set(Hn, 'EdgeAlpha', 1)
+    set(Hn, 'EdgeAlpha', 0.2)
 elseif isequal(realComplex, 'complex')
     Hm = surf(Dm_x, Dm_y, Dm_z, angle(Fgrid));
-    set(Hm, 'EdgeAlpha', 1)
+    set(Hm, 'EdgeAlpha', 0.2)
 end
 xlabel('x')
 ylabel('y')
