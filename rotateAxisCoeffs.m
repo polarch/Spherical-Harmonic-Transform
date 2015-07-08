@@ -1,5 +1,5 @@
-function c_nm = rotateCoeffs(c_n, theta_0, phi_0, basisType)
-%ROTATECOEFFS Get spherical coefficients for a rotated axisymmetric pattern
+function c_nm = rotateAxisCoeffs(c_n, theta_0, phi_0, basisType)
+%ROTATEAXISCOEFFS Get spherical coefficients for a rotated axisymmetric pattern
 %
 %   c_n: N+1 coefficients describing a rotationally symmetric pattern of
 %        order N, expressed as a sum of spherical harmonics of degree m=0

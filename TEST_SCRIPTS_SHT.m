@@ -174,9 +174,9 @@ Fn = randn(Nord+1,1);
 polar0 = pi/4;
 azi0 = pi/4;
 % fill the SH coefficients of the unrotated pattern with zeros for plotting
-Fnm = rotateCoeffs(Fn, 0,0, 'complex');
+Fnm = rotateAxisCoeffs(Fn, 0,0, 'complex');
 % SH coefficients of the rotated pattern
-Fnm_rot = rotateCoeffs(Fn, polar0, azi0, 'complex'); 
+Fnm_rot = rotateAxisCoeffs(Fn, polar0, azi0, 'complex'); 
 
 % plot the rotated and unrotated pattern
 figure
@@ -199,7 +199,7 @@ Xnm = randn((Nx+1)^2,1) + 1i*randn((Nx+1)^2,1);
 Nh = 4;
 Hn = randn((Nh+1),1);
 % fill the SH coefficients of the unrotated pattern with zeros for plotting
-Hnm = rotateCoeffs(Hn, 0,0, 'complex');
+Hnm = rotateAxisCoeffs(Hn, 0,0, 'complex');
 
 % perform convolution
 Ynm = sphConvolution(Xnm, Hn);
@@ -252,8 +252,8 @@ azi0 = pi/4;
 
 % get the SH coefficients of the rotated pattern into the two different
 % bases
-c_nm = rotateCoeffs(c_n, polar0, azi0, 'complex');
-r_nm = rotateCoeffs(c_n, polar0, azi0, 'real');
+c_nm = rotateAxisCoeffs(c_n, polar0, azi0, 'complex');
+r_nm = rotateAxisCoeffs(c_n, polar0, azi0, 'real');
 
 % convert from one base to the other by conversion matrix
 r_nm2 = complex2realCoeffs(c_nm);

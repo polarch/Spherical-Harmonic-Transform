@@ -1,4 +1,4 @@
-function R_N = complex2realCoeffs2(C_N)
+function R_N = complex2realCoeffs(C_N)
 %COMPLEX2REALCOEFFS Convert SH coeffs from the complex to real basis
 %   
 %   Converts the vector of (N+1)^2xK SH coefficients of K functions on the
@@ -19,7 +19,7 @@ function R_N = complex2realCoeffs2(C_N)
 
 % maximum order
 N = sqrt(size(C_N, 1)) -1;
-T_c2r = complex2realCoeffsMtx2(N);
+T_c2r = complex2realCoeffsMtx(N);
 
 % convert coefficients
 R_N = (T_c2r').' * C_N;

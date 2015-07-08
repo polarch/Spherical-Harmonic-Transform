@@ -31,21 +31,8 @@ end
 for n=0:Nc
     for m=-n:n
         q = n*(n+1)+m;
-        c_nm(q+1) = 0;
+        c_nm(q+1) = a_nm.' * G(:,:,q+1) * b_nm;
         
-        for n1=0:Na
-            for m1=-n1:n1
-                q1 = n1*(n1+1)+m1;
-                for n2=0:Nb
-                    for m2=-n2:n2
-                        q2 = n2*(n2+1)+m2;
-                        
-                        c_nm(q+1) = c_nm(q+1) + a_nm(q1+1)*b_nm(q2+1)*...
-                            G(q1+1,q2+1,q+1);
-                    end
-                end
-            end
-        end
     end
 end
 

@@ -1,4 +1,4 @@
-function T_c2r = complex2realCoeffsMtx2(N)
+function T_c2r = complex2realCoeffsMtx(N)
 %COMPLEX2REALCOEFFSMTX Returns transformation matrix of complex to rel SH
 %   
 %   Returns the unitary transformation matrix T_c2r the expresses the real  
