@@ -19,12 +19,9 @@ function C_N = real2complexCoeffs(R_N)
 
 % maximum order
 N = sqrt(size(R_N, 1)) -1;
-T_c2r = complex2realCoeffsMtx(N);
+T_r2c = real2complexSHMtx(N);
 
-% get real-to-complex basis tranformation matrix by hermitian transpose of
-% the unitary complex-to-real matrix computed above
-T_r2c = T_c2r';
 % convert coefficients
-C_N = (T_r2c').' * R_N;
+C_N = conj(T_r2c) * R_N;
     
 end

@@ -22,8 +22,10 @@ where
   
   N_m(\phi) = \sqrt{2} sin(|m|\phi},  m<0
 
-The associated Legendre functions P_l^m DO NOT include the Condon-Shortley phase factor (-1)^m in their definition
-(note that MATLAB by default includes this factor only in the unnormalized form of the Legendre function, while it omits it in the normalized forms)
+In the complex SH definition above, the associated Legendre functions P_l^m DO NOT include 
+the Condon-Shortley phase factor (-1)^m in their definition
+(note that MATLAB by default includes this factor only in the unnormalized 
+form of the Legendre function, while it omits it in the normalized forms)
 
 The SHT transform can be done by
 a) direct summation, for appropriate sampling schemes along with their

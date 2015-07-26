@@ -105,3 +105,35 @@ subplot(247)
 plotSphFunctionCoeffs(D_cSH2*C_N,'complex',5,5,'complex',gca)
 subplot(248)
 plotSphFunctionCoeffs(D_cSH3*C_N,'complex',5,5,'complex',gca)
+
+%%
+
+% rotate complex coefficients directly through Wigner-D matrices, for
+% comparison with the recursive method
+W_cSH1 = zeros((N+1)^2);
+W_cSH2 = zeros((N+1)^2);
+W_cSH3 = zeros((N+1)^2);
+% zeroth order
+W_cSH1(1) = 0;
+W_cSH2(1) = 0;
+W_cSH3(1) = 0;
+
+band_idx = 1;
+for l = 1:N
+    
+    [~,~,W_cSH1(band_idx+(1:2*l+1), band_idx+(1:2*l+1))] = wignerD(l, alpha, 0, 0);
+    [~,~,W_cSH2(band_idx+(1:2*l+1), band_idx+(1:2*l+1))] = wignerD(l, alpha, beta, 0);
+    [~,~,W_cSH3(band_idx+(1:2*l+1), band_idx+(1:2*l+1))] = wignerD(l, alpha, beta, gamma);    
+    band_idx = band_idx + 2*l+1;
+end
+
+% plot before and after rotation
+figure
+subplot(141)
+plotSphFunctionCoeffs(C_N,'complex',5,5,'complex',gca)
+subplot(142)
+plotSphFunctionCoeffs(W_cSH1*C_N,'complex',5,5,'complex',gca)
+subplot(143)
+plotSphFunctionCoeffs(W_cSH2*C_N,'complex',5,5,'complex',gca)
+subplot(144)
+plotSphFunctionCoeffs(W_cSH3*C_N,'complex',5,5,'complex',gca)

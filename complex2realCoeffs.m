@@ -19,9 +19,9 @@ function R_N = complex2realCoeffs(C_N)
 
 % maximum order
 N = sqrt(size(C_N, 1)) -1;
-T_c2r = complex2realCoeffsMtx(N);
+T_c2r = complex2realSHMtx(N);
 
 % convert coefficients
-R_N = (T_c2r').' * C_N;
+R_N = conj(T_c2r) * C_N;
 
 end

@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   Archontis Politis, 20/2/2015
+%   Archontis Politis, 10/6/2015
 %   archontis.politis@aalto.fi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,18 +9,26 @@ This is a collection of MATLAB routines for the Spherical Harmonic
 Transform (SHT) of spherical functions, and some manipulations on the 
 spherical harmonic (SH) domain.
 
-Both real and complex SH are supported. The orthonormalised versions of SH 
+Both real and complex SH are supported. The orthonormalised versions of SH
 are used. More specifically, the complex SHs are given by:
 
-Y_{nm}(\theta,\phi) = 
-(-1)^m \sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}} P_l^m(\cos\theta) e^{im\phi}
+  Y_{nm}(\theta,\phi) =
+  
+  (-1)^m \sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}} P_l^m(\cos\theta) e^{im\phi}
 
 and the real ones as in:
-R_{nm}(\theta,\phi) = 
-\sqrt{\frac{2n+1}{4\pi}\frac{(n-|m|)!}{(n+|m|)!}} P_l^{|m|}(\cos\theta)
-\sqrt{2} cos(m\phi},        m>0
-1                  ,        m=0
-\sqrt{2} sin(|m|\phi),      m<0
+
+  R_{nm}(\theta,\phi) = 
+  
+  \sqrt{\frac{2n+1}{4\pi}\frac{(n-|m|)!}{(n+|m|)!}} P_l^{|m|}(\cos\theta) N_m(\phi)
+  
+where
+
+  N_m(\phi) = \sqrt{2} cos(m\phi},    m>0
+  
+  N_m(\phi) = 1,    m>0
+  
+  N_m(\phi) = \sqrt{2} sin(|m|\phi},  m<0
 
 Note that the Condon-Shortley phase of (-1)^m is not used in the code for
 the complex SH since it is included in the definition of the associated 
@@ -100,6 +108,7 @@ leastSquaresSHT.m   -   Perform SHT by least-squares, weighted or unweighted
 inverseSHT.m        -	Perform the inverse SHT
 getTdesign          -   Returns the spherical coordinates of T-designs up to t=21
 getFliegeNodes      -   Returns FliegeMaier point set, up to order N=29 SHT
+
 t_designs_1_21.mat          -   Tables of t-designs, up to t=21
 fliegeMaierNodes_1_30.mat   -   Tables of Fliege-MAier sets, up to 300 points
 
@@ -125,6 +134,8 @@ w3j          -  Evaluate the Wigner-3j symbol through the Racah formula
 w3j_stirling -  Evaluate the Wigner-3j symbol through the Racah formula, 
                 using Stirling's large factorial approximation
 sym_w3j      -  Returns a Wigner-3j in symbolic form
+wignerD      -  Returns the Wigner-D and wigner-d matrices for rotation of 
+                complex spherical harmonics
 
 plotSphFunctionGrid     -   Plot easily spherical function defined on a regular 
                             grid
@@ -143,6 +154,7 @@ checkCondNumberSHT.m    - Computes the condition number of an sampling scheme
                           for a least-squares SHT
 euler2rotationMatrix    - Euler angles to rotation matrix
 unitCart2sph        -   Get directly azimuth and elevation from unit vectors in matrix form
+unitSph2cart        -   Get directly unit vectors from azimuth and elevation in matrix form
 replicatePerOrder   -   Replicate l^th element 2*l+1 times across specified dimension
 
 --- Some test scripts ---
