@@ -88,7 +88,65 @@ and with the corrections of
 
 Rotation matrices for both real and complex SH can be obtained.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For a list of functions and scripts check the README.txt file.
 For more details on the functions, check their help output in Matlab.
+
+--- List of MATLAB files ---
+getSH.m             -	Get SHs up to order N
+legendre2.m         -	Same as matlab Legendre extended for negative orders m<0
+leastSquaresSHT.m   -	SHT of function using least-squares
+weightedLeastSquaresSHT.m - SHT using weighted least-squares
+directSHT.m         -   Perform SHT directly by summation for special arrangements
+leastSquaresSHT.m   -   Perform SHT by least-squares, weighted or unweighted
+inverseSHT.m        -	Perform the inverse SHT
+getTdesign          -   Returns the spherical coordinates of T-designs up to t=21
+getFliegeNodes      -   Returns FliegeMaier point set, up to order N=29 SHT
+
+t_designs_1_21.mat          -   Tables of t-designs, up to t=21
+fliegeMaierNodes_1_30.mat   -   Tables of Fliege-MAier sets, up to 300 points
+
+complex2realCoeffs.m	-   Convert SH coeffs from the complex to real basis
+complex2realCoeffsMtx.m	-   Returns complex to real SH basis transformation matrix
+real2complexCoeffs.m    -   Convert SH coeffs from the real to complex basis
+rotateCoeffs.m          -   Get SH coefficients for a rotated axisymmetric 
+                            pattern
+conjCoeffs.m            -   Get the complex SH coefficients of a conjugate 
+                            function
+sphConvolution.m        -   Perform spherical convolution between a function 
+                            and a filter, in the SH domain
+sphMultiplication.m     -   Computes coefficients of product of two spherical 
+                            functions, through Gaunt Coefficients
+getSHrotMtx             -   Obtain rotation matrix for full rotation of the 
+                            coordinate system, that when applied to the SH 
+                            coefficients, returns the coefficients of the 
+                            rotated function
+
+gaunt_mtx.m	 -	Construct a 3D matrix of Gaunt coefficients up to three 
+                orders, each one a separate dimension of the matrix
+w3j          -  Evaluate the Wigner-3j symbol through the Racah formula
+w3j_stirling -  Evaluate the Wigner-3j symbol through the Racah formula, 
+                using Stirling's large factorial approximation
+sym_w3j      -  Returns a Wigner-3j in symbolic form
+wignerD      -  Returns the Wigner-D and wigner-d matrices for rotation of 
+                complex spherical harmonics
+
+plotSphFunctionGrid     -   Plot easily spherical function defined on a regular 
+                            grid
+plotSphFunctionTriangle -   Plot easily spherical function defined on an 
+                            irregular grid
+plotSphFunctionCoeffs   -   Plot spherical function with known SH coefficients
+
+Fdirs2grid.m        -	Helper function for plotting, used with grid2dirs
+grid2dirs.m         -	Construct a vector of regular grid points
+sphDelaunay.m       -	Computes the Delaunay triangulation on the unit sphere
+sphVoronoi.m        -	Computes the a Voronoi diagram on the unit sphere
+sphVoronoiAreas.m   -   Computes the areas of a voronoi diagram on the
+                        unit sphere
+getVoronoiWeights.m -   Conveniently get voronoi weights for a sampling scheme
+checkCondNumberSHT.m    - Computes the condition number of an sampling scheme
+                          for a least-squares SHT
+euler2rotationMatrix    - Euler angles to rotation matrix
+unitCart2sph        -   Get directly azimuth and elevation from unit vectors in matrix form
+unitSph2cart        -   Get directly unit vectors from azimuth and elevation in matrix form
+replicatePerOrder   -   Replicate l^th element 2*l+1 times across specified dimension

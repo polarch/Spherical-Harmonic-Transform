@@ -20,7 +20,7 @@ function A = gaunt_mtx(N1, N2, N)
 A = zeros((N1+1)^2, (N2+1)^2, (N+1)^2);
 for n = 0:N
         for m = -n:n
-            q = n*(n+1)+m
+            q = n*(n+1)+m;
                         
             for n1 = 0:N1
                 for m1 = -n1:n1
