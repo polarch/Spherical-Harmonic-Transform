@@ -1,57 +1,55 @@
 # Spherical-Harmonic-Transform
+
 A collection of MATLAB routines for the Spherical Harmonic Transform and related manipulations in the spherical harmonic spectrum.
 
->   Archontis Politis, 2015
->   Department of Signal Processing and Acoustics, Aalto University, Finland
->   archontis.politis@aalto.fi
+---
+>    Archontis Politis, 2015  
+>    Department of Signal Processing and Acoustics, Aalto University, Finland  
+>    archontis.politis@aalto.fi
+---
 
 Both real and complex SH are supported. The orthonormalised versions of SH
 are used. More specifically, the complex SHs are given by:
 
-  Y_{nm}(\theta,\phi) =
-  
-  (-1)^m \sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}} P_l^m(\cos\theta) e^{im\phi}
+    Y_{nm}(\theta,\phi) =
+    (-1)^m \sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}} P_l^m(\cos\theta) e^{im\phi}
 
 and the real ones as in:
 
-  R_{nm}(\theta,\phi) = 
-  
-  \sqrt{\frac{2n+1}{4\pi}\frac{(n-|m|)!}{(n+|m|)!}} P_l^{|m|}(\cos\theta) N_m(\phi)
+    R_{nm}(\theta,\phi) = 
+    \sqrt{\frac{2n+1}{4\pi}\frac{(n-|m|)!}{(n+|m|)!}} P_l^{|m|}(\cos\theta) N_m(\phi)
   
 where
 
-  N_m(\phi) = \sqrt{2} cos(m\phi},    m>0
-  
-  N_m(\phi) = 1,    m>0
-  
-  N_m(\phi) = \sqrt{2} sin(|m|\phi},  m<0
+    N_m(\phi) = \sqrt{2} cos(m\phi},    m>0
+    N_m(\phi) = 1,    m>0
+    N_m(\phi) = \sqrt{2} sin(|m|\phi},  m<0
 
 Note that the Condon-Shortley phase of (-1)^m is not introduced in the code for
 the complex SH since it is included in the definition of the associated 
 Legendre functions in Matlab (and it is canceled out in the code of the real SH).
 
-The SHT transform can be done by
+The SHT transform can be done by:
+
 a) direct summation, for appropriate sampling schemes along with their
 integration weights, such as the uniform spherical t-Designs, the Fliege-Maier
 sets, Gauss-Legendre quadrature grids, Lebedev grids and others.
+
 b) least-squares, weighted or not, for arbitrary sampling schemes. In this
 case weights can be provided externally, or use generic weights based on the
 areas of the spherical polygons around each evaluation point determined by
 the Voronoi diagram of the points on the unit sphere, using the included
 functions.
-MAT-files containing t-Designs and Fliege-Maier sets are also included.
-For more information on t-designs, see:
 
-    [http://neilsloane.com/sphdesigns/]
-and
+MAT-files containing t-Designs and Fliege-Maier sets are also included.
+For more information on t-designs, see [http://neilsloane.com/sphdesigns/](http://neilsloane.com/sphdesigns/) and
+
     McLaren's Improved Snub Cube and Other New Spherical Designs in Three
     Dimensions, R. H. Hardin and N. J. A. Sloane, Discrete and Computational
     Geometry, 15 (1996), pp. 429-441.
 
-while for the Fliege-Maier sets see
+while for the Fliege-Maier sets see [http://www.personal.soton.ac.uk/jf1w07/nodes/nodes.html](http://www.personal.soton.ac.uk/jf1w07/nodes/nodes.html) and
 
-    http://www.personal.soton.ac.uk/jf1w07/nodes/nodes.html
-and
     The distribution of points on the sphere and corresponding cubature
     formulae, J. Fliege and U. Maier, IMA Journal of Numerical Analysis (1999),
     19 (2): 317-334
@@ -68,9 +66,7 @@ introduced in
     Translational addition theorems for spherical vector wave functions,
     O. R. Cruzan, Quart. Appl. Math. 20, 33:40 (1962)
 
-which can be also found in
-
-    http://mathworld.wolfram.com/Wigner3j-Symbol.html, Eq.17.
+which can be also found in [http://mathworld.wolfram.com/Wigner3j-Symbol.html, Eq.17.](http://mathworld.wolfram.com/Wigner3j-Symbol.html)
 
 Finally, a few routines are included that compute coefficients of 
 rotated functions, either for the simple case of an axisymmetric kernel 
@@ -79,26 +75,27 @@ arbitrary functions were full rotation matrices are constructed from Euler
 angles. The algorithm used is according to the recursive method of Ivanic and 
 Ruedenberg, as can be found in
 
-       Ivanic, J., Ruedenberg, K. (1996). Rotation Matrices for Real 
-       Spherical Harmonics. Direct Determination by Recursion. The Journal 
-       of Physical Chemistry, 100(15), 6342?6347.
+    Ivanic, J., Ruedenberg, K. (1996). Rotation Matrices for Real 
+    Spherical Harmonics. Direct Determination by Recursion. The Journal 
+    of Physical Chemistry, 100(15), 6342?6347.
 
 and with the corrections of
 
-       Ivanic, J., Ruedenberg, K. (1998). Rotation Matrices for Real 
-       Spherical Harmonics. Direct Determination by Recursion Page: Additions 
-       and Corrections. Journal of Physical Chemistry A, 102(45), 9099?9100.
+    Ivanic, J., Ruedenberg, K. (1998). Rotation Matrices for Real 
+    Spherical Harmonics. Direct Determination by Recursion Page: Additions 
+    and Corrections. Journal of Physical Chemistry A, 102(45), 9099?9100.
 
 Rotation matrices for both real and complex SH can be obtained.
 
 For any questions, comments, corrections, or general feedback, please
 contact archontis.politis@aalto.fi
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+---
 
 For more details on the functions, check their help output in Matlab.
 
---- List of MATLAB files ---
+### List of MATLAB files:
+
 * getSH.m                   -   Get SHs up to order N
 * legendre2.m               -   Same as matlab Legendre extended for negative orders m<0
 * leastSquaresSHT.m         -   SHT of function using least-squares
@@ -113,7 +110,7 @@ For more details on the functions, check their help output in Matlab.
 * fliegeMaierNodes_1_30.mat   -   Tables of Fliege-MAier sets, up to 300 points
 
 * complex2realCoeffs.m      -   Convert SH coeffs from the complex to real basis
-* complex2realCoeffsMtx.m	-   Returns complex to real SH basis transformation matrix
+* complex2realCoeffsMtx.m    -   Returns complex to real SH basis transformation matrix
 * real2complexCoeffs.m      -   Convert SH coeffs from the real to complex basis
 * rotateCoeffs.m            -   Get SH coefficients for a rotated axisymmetric 
                                 pattern
