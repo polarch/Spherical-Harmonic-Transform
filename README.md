@@ -1,14 +1,9 @@
 # Spherical-Harmonic-Transform
 A collection of MATLAB routines for the Spherical Harmonic Transform and related manipulations in the spherical harmonic spectrum.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%   Archontis Politis, 2015
-%   Department of Signal Processing and Acoustics, Aalto University, Finland
-%   archontis.politis@aalto.fi
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+>   Archontis Politis, 2015
+>   Department of Signal Processing and Acoustics, Aalto University, Finland
+>   archontis.politis@aalto.fi
 
 Both real and complex SH are supported. The orthonormalised versions of SH
 are used. More specifically, the complex SHs are given by:
@@ -47,7 +42,7 @@ functions.
 MAT-files containing t-Designs and Fliege-Maier sets are also included.
 For more information on t-designs, see:
 
-    http://neilsloane.com/sphdesigns/
+    [http://neilsloane.com/sphdesigns/]
 and
     McLaren's Improved Snub Cube and Other New Spherical Designs in Three
     Dimensions, R. H. Hardin and N. J. A. Sloane, Discrete and Computational
