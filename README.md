@@ -29,6 +29,9 @@ Note that the Condon-Shortley phase of (-1)^m is not introduced in the code for
 the complex SH since it is included in the definition of the associated 
 Legendre functions in Matlab (and it is canceled out in the code of the real SH).
 
+The functionality of the library is demonstrated in detail in [http://research.spa.aalto.fi/projects/sht-lib/sht.html]
+or in the included script TEST_SCRIPTS_SHT.m.
+
 The SHT transform can be done by:
 
 a) direct summation, for appropriate sampling schemes along with their
@@ -53,9 +56,6 @@ while for the Fliege-Maier sets see [http://www.personal.soton.ac.uk/jf1w07/node
     The distribution of points on the sphere and corresponding cubature
     formulae, J. Fliege and U. Maier, IMA Journal of Numerical Analysis (1999),
     19 (2): 317-334
-
-Most of the functionality of the library is displayed in the included  
-script TEST_SCRIPTS_SHT.m
 
 Some routines in the library evaluate Gaunt coefficients, which express the
 integral of the three spherical harmonics. These can be evaluated either
