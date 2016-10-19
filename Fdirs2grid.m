@@ -31,10 +31,17 @@ function Wgrid = Fdirs2grid(W, aziRes, polarRes, CLOSED)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-phi = (0:aziRes:360-aziRes)*pi/180;
-theta = (0:polarRes:180)*pi/180;
-Nphi = length(phi);
-Ntheta = length(theta);
+if mod(360, aziRes) ~= 0 || mod(180, polarRes) ~= 0
+    error('azimuth or elevation resolution should divide exactly 360 and 180deg')
+end
+
+if nargin<4
+    CLOSED = 0;
+end
+
+Nphi = 360/aziRes;
+Ntheta = 180/polarRes+1;
+
 Nf = size(W, 2);
 Wgrid = zeros(Nphi, Ntheta, Nf);
 for i = 1:Nf

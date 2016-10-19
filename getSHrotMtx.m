@@ -56,7 +56,7 @@ if nargin<3
     basisType = 'real';
 end
 % allocate total rotation matrix
-R = zeros(L+1)^2;
+R = zeros((L+1)^2);
 
 % initialize zeroth and first band rotation matrices for recursion
 %	Rxyz = [Rxx Rxy Rxz
