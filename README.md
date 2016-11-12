@@ -3,15 +3,21 @@
 #### A collection of MATLAB routines for the Spherical Harmonic Transform and related manipulations in the spherical harmonic spectrum.
 
 ---
+>
 >    Archontis Politis, 2015  
+>
 >    Department of Signal Processing and Acoustics, Aalto University, Finland  
+>
 >    archontis.politis@aalto.fi
+>
 ---
 
-This Matlab/Octave library was developed during my doctoral research in the Communication Acoustics Research Group, Aalto, Finland. If you would like to reference the code, you can refer to my dissertation published [here](https://aaltodoc.aalto.fi/handle/123456789/22499):
+This Matlab/Octave library was developed during my doctoral research in the [Communication Acoustics Research Group] (http://spa.aalto.fi/en/research/research_groups/communication_acoustics/), Aalto University, Finland. If you would like to reference the code, you can refer to my dissertation published [here](https://aaltodoc.aalto.fi/handle/123456789/22499):
 
     Archontis Politis, Microphone array processing for parametric spatial audio techniques, 2016
     Doctoral Dissertation, Department of Signal Processing and Acoustics, Aalto University, Finland
+    
+## Description
 
 Both real and complex SH are supported. The orthonormalised versions of SH
 are used. More specifically, the complex SHs are given by:
