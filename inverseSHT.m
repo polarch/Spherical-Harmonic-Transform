@@ -16,7 +16,7 @@ function F = inverseSHT(F_N, dirs, basisType)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     % vector of spherical harmonics
-    N = sqrt(length(F_N)) - 1;
+    N = sqrt(size(F_N,1)) - 1;
     Y_N = getSH(N, dirs, basisType);
     
     % perform the inverse transform up to degree N
