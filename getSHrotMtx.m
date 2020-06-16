@@ -102,7 +102,7 @@ for l = 2:L
             % computes Eq.8.1
             if u~=0, u = u*U(l,m,n,R_1,R_lm1); end
             if v~=0, v = v*V(l,m,n,R_1,R_lm1); end
-            if w~=0, w = w*W(l,m,n,R_1,R_lm1); end
+            if w~=0, w = w*Wf(l,m,n,R_1,R_lm1); end
             R_l(m+l+1,n+l+1) = u + v + w;
         end
     end
@@ -150,7 +150,7 @@ end
 
 end
 
-function [ret] = W(l,m,n,R_1,R_lm1)
+function [ret] = Wf(l,m,n,R_1,R_lm1)
 
 if (m==0)
     error('should not be called')
