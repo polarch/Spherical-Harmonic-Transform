@@ -1,12 +1,15 @@
 function F = inverseSHT(F_N, dirs, basisType)
 %INVERSE_SHT Perform the inverse spherical harmonic transform
 %
-%   N:  maximum order of harmonics
-%   F: the spherical function recreated at directions 'dirs'
-%   dirs:   [azimuth inclination] angles in rads for each evaluation point,
-%           where inclination is the polar angle from zenith
-%           theta = pi/2-elevation
+%   F_N:    (N+1)^2 x L matrix of SH coefficients up to order N,  
+%           with L spherical functions encoded as columns
+%   dirs:   Kx2 matrix of directions that the inverse SHT is evaluated at, 
+%           in [azimuth_1 inclination_1; ...; azimuth_K inclination_K] 
+%           format (radians). Inclination is the polar angle from zenith
+%           inclination = pi/2-elevation
 %   basisType:  'complex' or 'real' spherical harmonics
+%
+%   F:      KxL matrix of reconstructed values at specified points
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
