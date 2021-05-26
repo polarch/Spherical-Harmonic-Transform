@@ -39,7 +39,7 @@ else
         logf(-j1 + j2 + j3) - logf(j1 + j2 + j3 + 1)));
     
     % summation over integers that do not result in negative factorials
-    Sum_t = sym(0);
+    Sum_t = 0;
     for t = 0:N_t
         
         % check factorial for negative values, include in sum if not
