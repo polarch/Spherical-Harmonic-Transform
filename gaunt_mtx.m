@@ -1,5 +1,5 @@
 function A = gaunt_mtx(N1, N2, N)
-%GAUNT_MTX Construct a matrix of Gaunt coefficients
+%GAUNT_MTX Construct a matrix of Gaunt coefficients for complex SHs
 %
 % GAUNT_MTX constructs the (N1+1)^2x(N2+1)^2x(N+1)^2 matrix of Gaunt 
 % coefficients which represent the instegral of three spherical harmonics 
