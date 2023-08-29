@@ -28,7 +28,7 @@ y_nm = zeros((N+1)^2, 1);
 for n=0:N
     for m=-n:n
         q = n*(n+1)+m;
-        y_nm(q+1) = 2*pi*sqrt(4*pi/(2*n+1))*x_nm(q+1)*h_n(n+1);
+        y_nm(q+1) = 2*pi*sqrt(4*pi/(2*n+1))*x_nm(q+1)*h_n(n*(n+1)+1);
     end
 end
 
